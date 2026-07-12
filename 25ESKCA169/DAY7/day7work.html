@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <div class="text-center my-5">
+    <h3 class="mb-3">Check Current Server Time</h3>
+    <button id="timeBtn" class="btn btn-lg btn-primary">
+        🌍 Get Current Date & Time
+    </button>
+    <div id="timeResult" class="mt-4 fs-4 fw-bold"></div>
+</div>
+<script>
+document.getElementById('timeBtn').addEventListener('click', function() {
+    const resultDiv = document.getElementById('timeResult');
+    resultDiv.innerHTML = '<span class="text-muted">Loading...</span>';
+
+    fetch('get-time.php')
+        .then(response => response.text())
+        .then(data => {
+            resultDiv.innerHTML = data;
+        })
+        .catch(error => {
+            resultDiv.innerHTML = '<span class="text-danger">Error fetching time</span>';
+        });
+});
+</script>
+</body>
+</html>
