@@ -1,0 +1,108 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Registration Form</title>
+    <link rel="stylesheet" href="formStylesheet.css">
+</head>
+<body>
+
+    <h1>Registration Form</h1>
+
+    <form action="" method="post" class="form">
+
+        <div>
+            <label for="fullname">Full Name</label><br>
+            <input type="text"
+                   id="fullname"
+                   name="fullname"
+                   placeholder="Enter full name"
+                   class="rounded">
+        </div>
+
+        <div>
+            <label for="email">Email Address</label><br>
+            <input type="email"
+                   id="email"
+                   name="email"
+                   placeholder="Enter email address"
+                   class="rounded">
+        </div>
+
+        <div>
+            <label for="phonenumber">Phone Number</label><br>
+            <input type="number"
+                   id="phonenumber"
+                   name="phonenumber"
+                   placeholder="Enter phone number"
+                   class="rounded">
+        </div>
+
+        <div>
+            <label for="birthdate">Birth Date</label><br>
+            <input type="date"
+                   id="birthdate"
+                   name="birthdate"
+                   class="side">
+        </div>
+
+        <div>
+            <label>Gender</label><br>
+
+            <input type="radio"
+                   id="male"
+                   name="gender"
+                   value="male"
+                   class="radio">
+            <label for="male">Male</label>
+
+            <input type="radio"
+                   id="female"
+                   name="gender"
+                   value="female"
+                   class="radio">
+            <label for="female">Female</label>
+            <input type="radio"
+                   id="prefer not to say"
+                   name="gender"
+                   value="prefer not to say"
+                   class="radio">
+            <label for="prefer not to say ">Prefer not to say</label>
+        </div>
+
+        <div>
+            <label for="address">Address</label><br>
+            <input type="text"
+                   id="address"
+                   name="address"
+                   placeholder="Enter your address"
+                   class="rounded">
+        </div>
+
+        <div>
+            <label for="countrySelect">Country</label><br>
+
+            <select id="countrySelect"
+                    name="country"
+                    class="side">
+                <option value="">Select your country</option>
+                <option value="India">India</option>
+                <option value="United States">United States</option>
+                <option value="Canada">Canada</option>
+                <option value="United Kingdom">United Kingdom</option>
+                <option value="Germany">Germany</option>
+                <option value="Japan">Japan</option>
+            </select>
+        </div>
+            <center>
+        <div>
+            <input type="submit"
+                   value="Submit"
+                   class="button">
+        </div>
+            </center>
+    </form>
+
+</body>
+</html>
