@@ -1,0 +1,201 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>PRAVAH 2027 | SKIT Jaipur</title>
+    <style>
+        :root {
+            --primary: #ff4d00;
+            --dark: #1a0033;
+        }
+        * { margin: 0; padding: 0; box-sizing: border-box; }
+        body {
+            font-family: 'Segoe UI', system-ui, sans-serif;
+            color: #fff;
+            background: linear-gradient(135deg, #1a0033, #330066);
+            line-height: 1.6;
+        }
+        header {
+            position: fixed;
+            top: 0; width: 100%;
+            background: rgba(26, 0, 51, 0.95);
+            backdrop-filter: blur(10px);
+            z-index: 1000;
+            padding: 1rem 5%;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+        .logo { font-size: 2.2rem; font-weight: bold; color: var(--primary); }
+        nav a { color: white; margin: 0 1rem; text-decoration: none; font-weight: 500; }
+
+        .hero {
+            height: 100vh;
+            background: linear-gradient(rgba(0,0,0,0.65), rgba(0,0,0,0.75)), url('https://source.unsplash.com/random/1920x1080/?festival,lights') center/cover;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            text-align: center;
+        }
+        .hero-content h1 { font-size: 4.5rem; margin-bottom: 0.5rem; }
+        .countdown {
+            display: flex;
+            gap: 20px;
+            justify-content: center;
+            margin: 2rem 0;
+            font-size: 1.8rem;
+        }
+        .countdown div { background: rgba(255,77,0,0.2); padding: 15px 25px; border-radius: 12px; }
+
+        .btn {
+            padding: 1rem 2.5rem;
+            background: var(--primary);
+            color: white;
+            border: none;
+            border-radius: 50px;
+            font-size: 1.2rem;
+            cursor: pointer;
+            transition: 0.3s;
+        }
+        .btn:hover { transform: scale(1.08); background: #ff6a00; }
+
+        section { padding: 5rem 5%; }
+        h2 { font-size: 3rem; text-align: center; margin-bottom: 3rem; color: var(--primary); }
+
+        .form-container {
+            max-width: 600px;
+            margin: 0 auto;
+            background: rgba(255,255,255,0.1);
+            padding: 2.5rem;
+            border-radius: 20px;
+        }
+        input, select, textarea {
+            width: 100%;
+            padding: 12px;
+            margin: 10px 0;
+            border: none;
+            border-radius: 8px;
+            background: rgba(255,255,255,0.9);
+            color: #000;
+        }
+        .events-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+            gap: 1.5rem;
+        }
+        .event-card {
+            background: rgba(255,255,255,0.1);
+            border-radius: 15px;
+            overflow: hidden;
+            transition: 0.3s;
+        }
+        .event-card:hover { transform: translateY(-10px); }
+    </style>
+</head>
+<body>
+    <header>
+        <div class="logo">PRAVAH</div>
+        <nav>
+            <a href="#about">About</a>
+            <a href="#events">Events</a>
+            <a href="#register">Register</a>
+        </nav>
+    </header>
+
+    <section class="hero">
+        <div class="hero-content">
+            <h1>PRAVAH 2027</h1>
+            <p>नवरस – एक प्रवाह<br><strong>Annual Techno • Cultural • Sports Fest</strong></p>
+            <p>Swami Keshvanand Institute of Technology, Jaipur</p>
+            
+            <h2>Starts on: 16th February 2027</h2>
+            <div class="countdown" id="countdown">
+                <div><span id="days">00</span><br>Days</div>
+                <div><span id="hours">00</span><br>Hours</div>
+                <div><span id="minutes">00</span><br>Minutes</div>
+                <div><span id="seconds">00</span><br>Seconds</div>
+            </div>
+
+            <button class="btn" onclick="document.getElementById('register').scrollIntoView({behavior: 'smooth'})">Register Now</button>
+        </div>
+    </section>
+
+    <section id="about">
+        <h2>About Pravah</h2>
+        <p style="max-width: 800px; margin: 0 auto; text-align: center; font-size: 1.2rem;">
+            Get ready for the biggest celebration at SKIT! Pravah brings together technical innovation, cultural brilliance, and sporting spirit.
+        </p>
+    </section>
+
+    <section id="events" style="background: rgba(0,0,0,0.3);">
+        <h2>Featured Events</h2>
+        <div class="events-grid">
+            <div class="event-card"><div class="card-body" style="padding:1.5rem;"><h3>Robo Rush</h3><p>Technical Robotics</p></div></div>
+            <div class="event-card"><div class="card-body" style="padding:1.5rem;"><h3>Rap'arazi</h3><p>Rap Battle</p></div></div>
+            <div class="event-card"><div class="card-body" style="padding:1.5rem;"><h3>AAVEG Sports</h3><p>Multiple Sports</p></div></div>
+            <div class="event-card"><div class="card-body" style="padding:1.5rem;"><h3>Kavyanjali</h3><p>Poetry & Literary</p></div></div>
+        </div>
+    </section>
+
+    <section id="register">
+        <h2>Registration Form</h2>
+        <div class="form-container">
+            <form id="regForm">
+                <input type="text" placeholder="Full Name" required>
+                <input type="email" placeholder="Email Address" required>
+                <input type="tel" placeholder="Phone Number" required>
+                <input type="text" placeholder="College / Institute" required>
+                <select required>
+                    <option value="">Select Event Category</option>
+                    <option>Technical</option>
+                    <option>Cultural</option>
+                    <option>Sports</option>
+                    <option>Multiple Events</option>
+                </select>
+                <textarea placeholder="Any specific event you want to participate in? (Optional)" rows="3"></textarea>
+                
+                <button type="submit" class="btn" style="width:100%; margin-top:1rem;">Submit Registration</button>
+            </form>
+        </div>
+    </section>
+
+    <footer style="background:#0f001f; padding:3rem; text-align:center;">
+        <p>&copy; 2027 PRAVAH | SKIT Jaipur</p>
+        <p>Follow us: <strong>@skitpravah</strong></p>
+    </footer>
+
+    <script>
+        // Countdown Timer to 16 Feb 2027
+        function countdown() {
+            const eventDate = new Date("February 16, 2027 00:00:00").getTime();
+            const now = new Date().getTime();
+            const distance = eventDate - now;
+
+            if (distance > 0) {
+                const days = Math.floor(distance / (1000 * 60 * 60 * 24));
+                const hours = Math.floor((distance % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60));
+                const minutes = Math.floor((distance % (1000 * 60 * 60)) / (1000 * 60));
+                const seconds = Math.floor((distance % (1000 * 60)) / 1000);
+
+                document.getElementById("days").innerHTML = days < 10 ? "0" + days : days;
+                document.getElementById("hours").innerHTML = hours < 10 ? "0" + hours : hours;
+                document.getElementById("minutes").innerHTML = minutes < 10 ? "0" + minutes : minutes;
+                document.getElementById("seconds").innerHTML = seconds < 10 ? "0" + seconds : seconds;
+            } else {
+                document.getElementById("countdown").innerHTML = "<h2 style='color:#ff4d00;'>Pravah 2027 is Here! 🎉</h2>";
+            }
+        }
+
+        setInterval(countdown, 1000);
+        countdown();
+
+        // Form Submission Alert
+        document.getElementById("regForm").addEventListener("submit", function(e) {
+            e.preventDefault();
+            alert("✅ Registration Successful! 🎉\nWe have received your details. See you at Pravah 2027!");
+            this.reset();
+        });
+    </script>
+</body>
+</html>
